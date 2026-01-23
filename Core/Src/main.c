@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "dma.h"
 #include "spi.h"
 #include "tim.h"
 #include "gpio.h"
@@ -28,6 +29,9 @@
 /* USER CODE BEGIN Includes */
 #include "FR24L01P.h"
 #include "task.h"
+#include "lcd.h"
+#include "lcd_init.h"
+#include "pic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,7 +72,8 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+uint8_t i,j;
+	double t=0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -89,16 +94,19 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_SPI1_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_ADC1_Init();
   MX_TIM3_Init();
+  MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim2);
 	
   FR24L019P_init (FR24_TX_Mode);
-
+	LCD_Init();//LCD初始化
+	LCD_Fill(0,0,240,280,WHITE);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -106,6 +114,24 @@ int main(void)
   while (1)
   {
 		AirTack_Scheduling();
+		
+						LCD_ShowChinese(0,0,"中景园电子",RED,WHITE,32,0);
+		LCD_ShowString(0,40,"LCD_W:",RED,WHITE,16,0);
+		LCD_ShowIntNum(48,40,LCD_W,3,RED,WHITE,16);
+		LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
+		LCD_ShowIntNum(128,40,LCD_H,3,RED,WHITE,16);
+		LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
+		LCD_ShowString(0,70,"Increaseing Nun:",RED,WHITE,16,0);
+		LCD_ShowFloatNum1(128,70,t,4,RED,WHITE,16);
+		t+=0.11;
+		for(j=0;j<3;j++)
+		{
+			for(i=0;i<6;i++)
+			{
+				LCD_ShowPicture(40*i,120+j*40,40,40,gImage_1);
+			}
+		}
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

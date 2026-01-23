@@ -3,7 +3,7 @@
 #include "adc.h"
 #include <stdint.h>
 #include "FR24L01P.h"
-
+#include "lcd.h"
 #define TASKNUM_MAX 3U
 
 typedef  struct
@@ -91,7 +91,6 @@ uint32_t ADCval = 0;
 static void TaskScheduling_2ms(void)
 {
 
-
 }
 /**************************************************************************** 
 - Function :        
@@ -108,7 +107,7 @@ con++;
 	if(con > 100)
 	{
 		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_2);
-		NRF24L01_SendBuf(Buf);
+		//NRF24L01_SendBuf(Buf);
 		con = 0;
 			
 	}

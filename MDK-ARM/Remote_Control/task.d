@@ -40,3 +40,4 @@ remote_control\task.o: ..\Hardware\FR24L01P\FR24L01P.h
 remote_control\task.o: D:\APP\keil\ARM\AC506u7\Bin\..\include\stdbool.h
 remote_control\task.o: ../Core/Inc/spi.h
 remote_control\task.o: ../Core/Inc/gpio.h
+remote_control\task.o: ..\Hardware\LCD\lcd.h

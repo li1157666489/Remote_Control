@@ -21,18 +21,21 @@ Target DLL:      CMSIS_AGDI.dll V1.33.12.0
 Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
-D:\windown\textyaokong\Remote_Control\MDK-ARM\Remote_Control.uvprojx
-Project File Date:  01/17/2026
+D:\windown\6.17\Remote_Control\MDK-ARM\Remote_Control.uvprojx
+Project File Date:  01/23/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\APP\keil\ARM\AC506u7\Bin'
 Build target 'Remote_Control'
-compiling task.c...
-compiling main.c...
+Note: source file '..\BSW\ADC.c' - object file renamed from 'Remote_Control\ADC.o' to 'Remote_Control\adc_1.o'.
+compiling lcd_init.c...
+..\Hardware\LCD\lcd_init.c(53): warning:  #177-D: variable "i"  was declared but never referenced
+  	uint8_t i;
+..\Hardware\LCD\lcd_init.c: 1 warning, 0 errors
 linking...
-Program Size: Code=9032 RO-data=460 RW-data=64 ZI-data=1400  
+Program Size: Code=13972 RO-data=18280 RW-data=64 ZI-data=1584  
 FromELF: creating hex file...
-"Remote_Control\Remote_Control.axf" - 0 Error(s), 0 Warning(s).
+"Remote_Control\Remote_Control.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -56,7 +59,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:08
 </pre>
 </body>
 </html>

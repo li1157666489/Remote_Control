@@ -35,9 +35,13 @@ remote_control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 remote_control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 remote_control\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 remote_control\main.o: ../Core/Inc/adc.h
+remote_control\main.o: ../Core/Inc/dma.h
 remote_control\main.o: ../Core/Inc/spi.h
 remote_control\main.o: ../Core/Inc/tim.h
 remote_control\main.o: ../Core/Inc/gpio.h
 remote_control\main.o: ..\Hardware\FR24L01P\FR24L01P.h
 remote_control\main.o: D:\APP\keil\ARM\AC506u7\Bin\..\include\stdbool.h
 remote_control\main.o: ..\SYS\task.h
+remote_control\main.o: ..\Hardware\LCD\lcd.h
+remote_control\main.o: ..\Hardware\LCD\lcd_init.h
+remote_control\main.o: ..\Hardware\LCD\pic.h
