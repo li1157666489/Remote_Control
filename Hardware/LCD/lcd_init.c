@@ -53,9 +53,9 @@ void LCD_Writ_Bus(uint8_t dat)
 	uint8_t i;
 	LCD_CS_Clr();
 #ifdef HardwareSpi
-	//HAL_SPI_Transmit(&hspi2,&dat,1,HAL_MAX_DELAY);
-	HAL_SPI_Transmit_DMA(&hspi2,&dat,1);
-	while(HAL_SPI_GetState(&hspi2) != HAL_SPI_STATE_READY)
+	HAL_SPI_Transmit(&hspi2,&dat,1,HAL_MAX_DELAY);
+	//HAL_SPI_Transmit_DMA(&hspi2,&dat,1);
+	//while(HAL_SPI_GetState(&hspi2) != HAL_SPI_STATE_READY)
 #else
 	for(i=0;i<8;i++)
 	{			  

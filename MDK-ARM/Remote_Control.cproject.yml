@@ -1,0 +1,152 @@
+project:
+  packs:
+    - pack: ARM::CMSIS@5.9.0
+    - pack: Keil::STM32F4xx_DFP@2.16.0
+    - pack: LVGL::lvgl@9.4.0
+    - pack: ARM::CMSIS-NN@^4.0.0
+    - pack: ARM::CMSIS-DSP@^1.10.1
+  setups:
+    - setup: Options for Remote_Control
+      processor:
+        fpu: sp
+      add-path:
+        - ../Core/Inc
+        - ../Drivers/STM32F4xx_HAL_Driver/Inc
+        - ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
+        - ../Drivers/CMSIS/Device/ST/STM32F4xx/Include
+        - ../Drivers/CMSIS/Include
+        - ../Hardware/FR24L01P
+        - ../SYS
+        - ../Hardware/LCD
+        - ../BSW
+        - ../ASW/LVGL/src
+        - ../ASW/LVGL/examples/porting
+        - ../ASW/LVGL/demos
+        - ../ASW/LVGL
+      debug: "on"
+      define:
+        - USE_HAL_DRIVER
+        - STM32F405xx
+        - __MICROLIB
+      define-asm:
+        - __MICROLIB
+      misc:
+        - C:
+            - -std=c11
+          C-CPP:
+            - -fno-rtti
+            - -funsigned-char
+            - -fshort-enums
+            - -fshort-wchar
+            - -ffunction-sections
+            - -Wno-packed
+            - -Wno-missing-variable-declarations
+            - -Wno-missing-prototypes
+            - -Wno-missing-noreturn
+            - -Wno-sign-conversion
+            - -Wno-nonportable-include-path
+            - -Wno-reserved-id-macro
+            - -Wno-unused-macros
+            - -Wno-documentation-unknown-command
+            - -Wno-documentation
+            - -Wno-license-management
+            - -Wno-parentheses-equality
+          CPP:
+            - -xc++
+            - -std=c++03
+            - -fno-exceptions
+          ASM:
+            - -masm=auto
+          Link:
+            - --library_type=microlib
+            - --map
+            - --load_addr_map_info
+            - --xref
+            - --callgraph
+            - --symbols
+            - --info sizes
+            - --info totals
+            - --info unused
+            - --info veneers
+            - --strict
+            - --summary_stderr
+            - --info summarysizes
+  linker:
+    - script: Remote_Control_Remote_Control.sct
+  groups:
+    - group: Application/MDK-ARM
+      files:
+        - file: startup_stm32f405xx.s
+          misc:
+            - ASM:
+                - -masm=auto
+                - -x assembler
+    - group: Application/User/Core
+      files:
+        - file: ../Core/Src/main.c
+        - file: ../Core/Src/gpio.c
+        - file: ../Core/Src/adc.c
+          misc:
+            - CPP:
+                - -xc++
+        - file: ../Core/Src/dma.c
+          misc:
+            - CPP:
+                - -xc++
+        - file: ../Core/Src/spi.c
+        - file: ../Core/Src/tim.c
+        - file: ../Core/Src/stm32f4xx_it.c
+        - file: ../Core/Src/stm32f4xx_hal_msp.c
+    - group: Drivers/STM32F4xx_HAL_Driver
+      files:
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c
+          misc:
+            - CPP:
+                - -xc++
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c
+          misc:
+            - CPP:
+                - -xc++
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c
+          misc:
+            - CPP:
+                - -xc++
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+        - file: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+    - group: Drivers/CMSIS
+      files:
+        - file: ../Core/Src/system_stm32f4xx.c
+    - group: Hardware
+      files:
+        - file: ../Hardware/FR24L01P/FR24L01P.c
+        - file: ../Hardware/LCD/lcd.c
+        - file: ../Hardware/LCD/lcd_init.c
+        - file: ../Hardware/LCD/lcdfont.h
+        - file: ../Hardware/LCD/pic.h
+    - group: Sys
+      files:
+        - file: ../SYS/task.c
+    - group: BSW
+      files:
+        - file: ../BSW/ADC.c
+        - file: ../BSW/com.c
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: LVGL::LVGL&LVGL9:Demos:Assets
+    - component: LVGL::LVGL&LVGL9:Demos:Widgets
+    - component: LVGL::LVGL&LVGL9:Essential
+    - component: LVGL::LVGL&LVGL9:Porting:Display&Generic

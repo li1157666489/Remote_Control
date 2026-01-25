@@ -32,6 +32,10 @@
 #include "lcd.h"
 #include "lcd_init.h"
 #include "pic.h"
+#include "lvgl.h"
+#include "demos/lv_demos.h"
+
+//#include "lv_port_disp.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -107,6 +111,9 @@ uint8_t i,j;
   FR24L019P_init (FR24_TX_Mode);
 	LCD_Init();//LCD初始化
 	LCD_Fill(0,0,240,280,WHITE);
+	lv_init();          // LVGL 内核初始化
+  lv_port_disp_init(); // 调用你修改后的显示接口初始化
+	lv_demo_widgets();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -115,22 +122,22 @@ uint8_t i,j;
   {
 		AirTack_Scheduling();
 		
-						LCD_ShowChinese(0,0,"中景园电子",RED,WHITE,32,0);
-		LCD_ShowString(0,40,"LCD_W:",RED,WHITE,16,0);
-		LCD_ShowIntNum(48,40,LCD_W,3,RED,WHITE,16);
-		LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
-		LCD_ShowIntNum(128,40,LCD_H,3,RED,WHITE,16);
-		LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
-		LCD_ShowString(0,70,"Increaseing Nun:",RED,WHITE,16,0);
-		LCD_ShowFloatNum1(128,70,t,4,RED,WHITE,16);
-		t+=0.11;
-		for(j=0;j<3;j++)
-		{
-			for(i=0;i<6;i++)
-			{
-				LCD_ShowPicture(40*i,120+j*40,40,40,gImage_1);
-			}
-		}
+//						LCD_ShowChinese(0,0,"中景园电子",RED,WHITE,32,0);
+//		LCD_ShowString(0,40,"LCD_W:",RED,WHITE,16,0);
+//		LCD_ShowIntNum(48,40,LCD_W,3,RED,WHITE,16);
+//		LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
+//		LCD_ShowIntNum(128,40,LCD_H,3,RED,WHITE,16);
+//		LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
+//		LCD_ShowString(0,70,"Increaseing Nun:",RED,WHITE,16,0);
+//		LCD_ShowFloatNum1(128,70,t,4,RED,WHITE,16);
+//		t+=0.11;
+//		for(j=0;j<3;j++)
+//		{
+//			for(i=0;i<6;i++)
+//			{
+//				LCD_ShowPicture(40*i,120+j*40,40,40,gImage_1);
+//			}
+//		}
 
     /* USER CODE END WHILE */
 

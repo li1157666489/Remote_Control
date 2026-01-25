@@ -1,0 +1,10 @@
+1 out of 1 target(s) converted
+Created solution: D:/windown/6.17/Remote_Control/MDK-ARM/Remote_Control.csolution.yml
+With projects:
+- D:/windown/6.17/Remote_Control/MDK-ARM/Remote_Control.cproject.yml
+Error: 0 error(s), 4 warning(s):
+Warnings:
+	For target "Remote_Control" file 'D:/windown/6.17/Remote_Control/ASW/LVGL/src' does not exists
+	For target "Remote_Control" file 'D:/windown/6.17/Remote_Control/ASW/LVGL/examples/porting' does not exists
+	For target "Remote_Control" file 'D:/windown/6.17/Remote_Control/ASW/LVGL/demos' does not exists
+	For target "Remote_Control" file 'D:/windown/6.17/Remote_Control/ASW/LVGL' does not exists

@@ -1,0 +1,43 @@
+remote_control/lv_x11_display.o: \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\lv_x11_display.c \
+  RTE\LVGL\lv_conf_cmsis.h RTE\_Remote_Control\RTE_Components.h \
+  RTE\_Remote_Control\Pre_Include_Global.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\lv_x11.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\lv_display.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\..\lv_conf_kconfig.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\inttypes.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\limits.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_timer.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\..\tick\lv_tick.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\..\tick\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\..\tick\..\misc\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_ll.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_event.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_array.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_color.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_assert.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_log.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\..\stdlib\lv_mem.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\..\stdlib\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\..\stdlib\lv_string.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\..\stdlib\..\misc\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_math.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_palette.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_color_op.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\display\..\misc\lv_area.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\indev\lv_indev.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\indev\..\core\lv_group.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\core\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\core\..\misc\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\core\..\misc\lv_ll.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\indev\..\misc\lv_area.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\indev\..\misc\lv_timer.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\indev\..\misc\lv_event.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\draw\lv_image_dsc.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\drivers\x11\..\..\draw\..\lv_conf_internal.h

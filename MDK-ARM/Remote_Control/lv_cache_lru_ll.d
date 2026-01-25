@@ -1,0 +1,30 @@
+remote_control/lv_cache_lru_ll.o: \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\lv_cache_lru_ll.c \
+  RTE\LVGL\lv_conf_cmsis.h RTE\_Remote_Control\RTE_Components.h \
+  RTE\_Remote_Control\Pre_Include_Global.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\lv_cache_lru_ll.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\lv_cache_private.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\lv_conf_kconfig.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\inttypes.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\limits.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\osal\lv_os_private.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\osal\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\osal\lv_os.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\osal\..\misc\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\osal\lv_os_none.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\lv_cache_entry.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\stdlib\lv_sprintf.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\stdlib\..\misc\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\stdlib\lv_string.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\stdlib\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\lv_ll.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\lv_iter.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\lv_assert.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\lv_log.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\..\..\stdlib\lv_mem.h

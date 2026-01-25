@@ -1,0 +1,39 @@
+remote_control/lv_cache.o: \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\lv_cache.c \
+  RTE\LVGL\lv_conf_cmsis.h RTE\_Remote_Control\RTE_Components.h \
+  RTE\_Remote_Control\Pre_Include_Global.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\lv_cache.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\lv_conf_kconfig.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\inttypes.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\limits.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\lv_cache_entry.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\lv_cache_class.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\lv_cache_lru_rb.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\..\lv_cache_private.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\osal\lv_os_private.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\osal\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\osal\lv_os.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\osal\..\misc\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\osal\lv_os_none.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\lv_cache_lru_ll.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\class\lv_cache_sc_da.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\instance\lv_cache_instance.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\instance\lv_image_header_cache.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\instance\..\..\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\instance\lv_image_cache.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\stdlib\lv_sprintf.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\stdlib\..\misc\lv_types.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\lv_assert.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\lv_log.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\stdlib\lv_mem.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\stdlib\..\lv_conf_internal.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\..\stdlib\lv_string.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\lv_cache_entry_private.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\lv_cache_private.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\src\misc\cache\..\lv_profiler.h

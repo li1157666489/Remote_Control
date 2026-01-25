@@ -4,6 +4,9 @@
 #include <stdint.h>
 #include "FR24L01P.h"
 #include "lcd.h"
+#include "lvgl.h"
+#include "demos/lv_demos.h"
+//#include "lv_port_disp.h"
 #define TASKNUM_MAX 3U
 
 typedef  struct
@@ -79,6 +82,7 @@ static void TaskScheduling_1ms(void)
 {
 HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_8);
 HAL_ADC_Start(&hadc1);
+	lv_tick_inc(1);
 }
 /**************************************************************************** 
 - Function :        
@@ -104,6 +108,8 @@ static void TaskScheduling_10ms(void)
 uint8_t Buf[5] = {0x11,0x22,0x55};
 static uint32_t con = 0;
 con++;
+lv_timer_handler();
+
 	if(con > 100)
 	{
 		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_2);
