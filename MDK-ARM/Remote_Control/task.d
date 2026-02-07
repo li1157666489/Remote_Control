@@ -39,8 +39,7 @@ remote_control/task.o: ..\SYS\task.c RTE\LVGL\lv_conf_cmsis.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Core\Inc\adc.h ..\Hardware\FR24L01P\FR24L01P.h \
   D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdbool.h ..\Core\Inc\spi.h \
-  ..\Core\Inc\gpio.h ..\Hardware\LCD\lcd.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\lvgl.h \
+  ..\Core\Inc\gpio.h D:\APP\keil\LVGL\lvgl\9.4.0\lvgl.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\lv_version.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_init.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_conf_internal.h \

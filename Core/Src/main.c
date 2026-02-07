@@ -29,12 +29,10 @@
 /* USER CODE BEGIN Includes */
 #include "FR24L01P.h"
 #include "task.h"
-#include "lcd.h"
-#include "lcd_init.h"
-#include "pic.h"
 #include "lvgl.h"
 #include "demos/lv_demos.h"
-
+#include "st7789v.h"
+#include "lv_port_disp_template.h"
 //#include "lv_port_disp.h"
 /* USER CODE END Includes */
 
@@ -106,14 +104,13 @@ uint8_t i,j;
   MX_TIM3_Init();
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
-	HAL_TIM_Base_Start_IT(&htim2);
-	
   FR24L019P_init (FR24_TX_Mode);
-	LCD_Init();//LCD初始化
-	LCD_Fill(0,0,240,280,WHITE);
+	ST7789V_Init();//LCD初始化
+	ST7789V_Test();
 	lv_init();          // LVGL 内核初始化
   lv_port_disp_init(); // 调用你修改后的显示接口初始化
 	lv_demo_widgets();
+	HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 
   /* Infinite loop */

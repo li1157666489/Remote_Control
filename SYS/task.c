@@ -3,7 +3,6 @@
 #include "adc.h"
 #include <stdint.h>
 #include "FR24L01P.h"
-#include "lcd.h"
 #include "lvgl.h"
 #include "demos/lv_demos.h"
 //#include "lv_port_disp.h"

@@ -11,8 +11,8 @@
  *********************/
 #include "lv_port_disp_template.h"
 #include <stdbool.h>
-#include "lcd.h"
 #include "lvgl.h"
+#include "st7789v.h"
 /*********************
  *      DEFINES
  *********************/
@@ -122,16 +122,16 @@ void disp_disable_update(void)
  *`px_map` contains the rendered image as raw pixel map and it should be copied to `area` on the display.
  *You can use DMA or any hardware acceleration to do this operation in the background but
  *'lv_display_flush_ready()' has to be called when it's finished.*/
+ uint16_t   TEXT[1];
 static void disp_flush(lv_display_t * disp_drv, const lv_area_t * area, uint8_t * px_map)
 {
+	
 	if(disp_flush_enabled) {
-
         uint16_t * color_p = (uint16_t *)px_map;
-
         for(int32_t y = area->y1; y <= area->y2; y++) {
             for(int32_t x = area->x1; x <= area->x2; x++) {
 
-                LCD_DrawPoint(x, y, *color_p);
+                ST7789V_DrawPixel(x, y, *color_p);
                 color_p++;   // 每次移动 1 个像素（2 字节）
             }
         }
