@@ -32,7 +32,7 @@ static typtask Air_tackList[TASKNUM_MAX]=
     },
     {
         0,
-        30,
+        10,
         TaskScheduling_10ms,
     }
 };
@@ -81,7 +81,6 @@ static void TaskScheduling_1ms(void)
 {
 HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_8);
 HAL_ADC_Start(&hadc1);
-	lv_tick_inc(1);
 }
 /**************************************************************************** 
 - Function :        
@@ -93,7 +92,8 @@ HAL_ADC_Start(&hadc1);
 uint32_t ADCval = 0;
 static void TaskScheduling_2ms(void)
 {
-
+    /* LVGL时钟更新,每2ms调用一次 */
+    lv_tick_inc(2);
 }
 /**************************************************************************** 
 - Function :        
@@ -107,14 +107,21 @@ static void TaskScheduling_10ms(void)
 uint8_t Buf[5] = {0x11,0x22,0x55};
 static uint32_t con = 0;
 con++;
-lv_timer_handler();
+
+	/* LVGL任务处理,添加防重入保护 */
+	static volatile bool lvgl_handler_running = false;
+	if(!lvgl_handler_running) {
+		lvgl_handler_running = true;
+		lv_timer_handler();
+		lvgl_handler_running = false;
+	}
 
 	if(con > 100)
 	{
 		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_2);
 		//NRF24L01_SendBuf(Buf);
 		con = 0;
-			
+
 	}
 	ADCval= 	HAL_ADC_GetValue(&hadc1);
 }

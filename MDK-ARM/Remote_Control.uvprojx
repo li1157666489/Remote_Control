@@ -341,7 +341,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F405xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;    ../Drivers/STM32F4xx_HAL_Driver/Inc;    ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;    ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;    ../Drivers/CMSIS/Include;    ..\Hardware\FR24L01P;    ..\SYS;    ..\Hardware\LCD;    ..\BSW;    ..\ASW\LVGL\src;    ..\ASW\LVGL\examples\porting;    ..\ASW\LVGL\demos;    ..\ASW\LVGL</IncludePath>
+              <IncludePath>../Core/Inc;        ../Drivers/STM32F4xx_HAL_Driver/Inc;        ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;        ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;        ../Drivers/CMSIS/Include;        ..\Hardware\FR24L01P;        ..\SYS;        ..\Hardware\LCD;        ..\BSW;        ..\ASW\LVGL\src;        ..\ASW\LVGL\examples\porting;        ..\ASW\LVGL\demos;        ..\ASW\LVGL</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

@@ -26,7 +26,7 @@
 #define LV_COLOR_DEPTH 16
 
 /** Swap the high and low bytes for RGB565 */
-#define LV_COLOR_16_SWAP 0
+#define LV_COLOR_16_SWAP 1
 
 /*=========================
    STDLIB WRAPPER SETTINGS
@@ -87,7 +87,7 @@
  *====================*/
 
 /** Default display refresh, input device read and animation step period. */
-#define LV_DEF_REFR_PERIOD  33      /**< [ms] */
+#define LV_DEF_REFR_PERIOD  16      /**< [ms] */
 
 /** Default Dots Per Inch. Used to initialize default sizes such as widgets sized, style paddings.
  * (Not so important, you can adjust it to modify default sizes and spaces.) */
@@ -1310,17 +1310,17 @@
 
     #if LV_USE_DEMO_BENCHMARK
         /** Use fonts where bitmaps are aligned 16 byte and has Nx16 byte stride */
-        #define LV_DEMO_BENCHMARK_ALIGNED_FONTS 0
+        #define LV_DEMO_BENCHMARK_ALIGNED_FONTS 1
 				#define LV_USE_DEMO_WIDGETS    1
     #endif
 
     /** Music player demo */
     #if LV_USE_DEMO_MUSIC
-        #define LV_DEMO_MUSIC_SQUARE    0
-        #define LV_DEMO_MUSIC_LANDSCAPE 0
-        #define LV_DEMO_MUSIC_ROUND     0
-        #define LV_DEMO_MUSIC_LARGE     0
-        #define LV_DEMO_MUSIC_AUTO_PLAY 0
+        #define LV_DEMO_MUSIC_SQUARE    1
+        #define LV_DEMO_MUSIC_LANDSCAPE 1
+        #define LV_DEMO_MUSIC_ROUND     1
+        #define LV_DEMO_MUSIC_LARGE     1
+        #define LV_DEMO_MUSIC_AUTO_PLAY 1
     #endif
 
 #endif /* LV_BUILD_DEMOS */

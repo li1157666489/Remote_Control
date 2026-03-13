@@ -53,22 +53,7 @@ static void disp_flush(lv_display_t * disp, const lv_area_t * area, uint8_t * px
 
 void lv_port_disp_init(void)
 {
-    /*-------------------------
-     * Initialize your display
-     * -----------------------*/
-    disp_init();
-
-    /*------------------------------------
-     * Create a display and set a flush_cb
-     * -----------------------------------*/
-    lv_display_t * disp = lv_display_create(MY_DISP_HOR_RES, MY_DISP_VER_RES);
-    lv_display_set_flush_cb(disp, disp_flush);
-
-    /* Example 1
-     * One buffer for partial rendering*/
-    LV_ATTRIBUTE_MEM_ALIGN
-    static uint8_t buf_1_1[MY_DISP_HOR_RES * 10 * BYTE_PER_PIXEL];            /*A buffer for 10 rows*/
-    lv_display_set_buffers(disp, buf_1_1, NULL, sizeof(buf_1_1), LV_DISPLAY_RENDER_MODE_PARTIAL);
+disp_init(); lv_display_t *disp = lv_display_create(MY_DISP_HOR_RES, MY_DISP_VER_RES); lv_display_set_flush_cb(disp, disp_flush); static lv_color_t buf1[MY_DISP_HOR_RES * 20]; lv_display_set_buffers(disp, buf1, NULL, sizeof(buf1), LV_DISPLAY_RENDER_MODE_PARTIAL);
 
 //    /* Example 2
 //     * Two buffers for partial rendering
@@ -90,6 +75,7 @@ void lv_port_disp_init(void)
 //    static uint8_t buf_3_2[MY_DISP_HOR_RES * MY_DISP_VER_RES * BYTE_PER_PIXEL];
 //    lv_display_set_buffers(disp, buf_3_1, buf_3_2, sizeof(buf_3_1), LV_DISPLAY_RENDER_MODE_DIRECT);
 
+lv_display_set_color_format(disp, LV_COLOR_FORMAT_RGB565);
 }
 
 /**********************
@@ -125,17 +111,28 @@ void disp_disable_update(void)
  uint16_t   TEXT[1];
 static void disp_flush(lv_display_t * disp_drv, const lv_area_t * area, uint8_t * px_map)
 {
-	
-	if(disp_flush_enabled) {
-        uint16_t * color_p = (uint16_t *)px_map;
-        for(int32_t y = area->y1; y <= area->y2; y++) {
-            for(int32_t x = area->x1; x <= area->x2; x++) {
-
-                ST7789V_DrawPixel(x, y, *color_p);
-                color_p++;   // ÿ���ƶ� 1 �����أ�2 �ֽڣ�
-            }
-        }
+    /* 参数检查 */
+    if (area->x2 < area->x1 || area->y2 < area->y1 || px_map == NULL) {
+        lv_display_flush_ready(disp_drv);
+        return;
     }
+
+	uint32_t w = area->x2 - area->x1 + 1;
+    uint32_t h = area->y2 - area->y1 + 1;
+
+    ST7789V_SetAddressWindow(area->x1, area->y1,
+                             area->x2, area->y2);
+
+    uint32_t pixel_count = w * h;
+
+    ST7789V_Select();    // CS = 0
+    ST7789V_DC_Set();    // DC = 1
+
+    /* 使用批量传输,提高速度,设置合理超时时间 */
+    uint32_t total_bytes = pixel_count * 2;  /* RGB565: 2字节/像素 */
+    HAL_SPI_Transmit(&hspi2, px_map, total_bytes, 100);  /* 超时100ms */
+
+    ST7789V_UnSelect();  // CS = 1
 
     lv_display_flush_ready(disp_drv);
 

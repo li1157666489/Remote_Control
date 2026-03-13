@@ -106,7 +106,7 @@ uint8_t i,j;
   /* USER CODE BEGIN 2 */
   FR24L019P_init (FR24_TX_Mode);
 	ST7789V_Init();//LCD初始化
-	ST7789V_Test();
+//	ST7789V_Test();
 	lv_init();          // LVGL 内核初始化
   lv_port_disp_init(); // 调用你修改后的显示接口初始化
 	lv_demo_widgets();
