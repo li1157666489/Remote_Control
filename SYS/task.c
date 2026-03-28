@@ -43,6 +43,18 @@ static typtask Air_tackList[TASKNUM_MAX]=
 - Return:           
 - Others :          
 ******************************************************************************/ 
+void AirTack_Init(void)
+{
+
+
+}
+/**************************************************************************** 
+- Function :        
+- Input:            
+- Output:           
+- Return:           
+- Others :          
+******************************************************************************/ 
 void AirTack_Tick(void)
 {
     uint8_t u8Tack_index = 0u;
@@ -89,7 +101,7 @@ HAL_ADC_Start(&hadc1);
 - Return:           
 - Others :          
 ******************************************************************************/ 
-uint32_t ADCval = 0;
+uint16_t ADCval[2] = {0,0};
 static void TaskScheduling_2ms(void)
 {
     /* LVGL时钟更新,每2ms调用一次 */
@@ -108,12 +120,19 @@ uint8_t Buf[5] = {0x11,0x22,0x55};
 static uint32_t con = 0;
 con++;
 
-	/* LVGL任务处理,添加防重入保护 */
+	/* LVGL任务处理，添加防重入保护和时间限制 */
 	static volatile bool lvgl_handler_running = false;
-	if(!lvgl_handler_running) {
+	if (!lvgl_handler_running) {
+		uint32_t start_tick = HAL_GetTick();
 		lvgl_handler_running = true;
 		lv_timer_handler();
 		lvgl_handler_running = false;
+
+		/* 监控执行时间，超过5ms则可能影响其他任务 */
+		if (HAL_GetTick() - start_tick > 5) {
+			/* LVGL处理时间过长，可以考虑优化 */
+			HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_2);  /* 可选：LED指示性能问题 */
+		}
 	}
 
 	if(con > 100)
@@ -123,7 +142,8 @@ con++;
 		con = 0;
 
 	}
-	ADCval= 	HAL_ADC_GetValue(&hadc1);
+	ADCval[0]= 	ADC_Read(0);
+	ADCval[1]= 	ADC_Read(1);
 }
 /**************************************************************************** 
 - Function :        
@@ -134,6 +154,6 @@ con++;
 ******************************************************************************/ 
 static void TaskScheduling_50ms(void)
 {
-	myui_update_status(12, 1, 10);
-	myui_update_control(ADCval, 2, 3, 6);
+	//myui_update_status(12, 1, 10);
+	myui_update_control(ADCval[0], ADCval[1], ADCval[0], ADCval[1]);
 }

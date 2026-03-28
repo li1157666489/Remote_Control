@@ -9,3 +9,4 @@
 #include "st7789v.h"
 #include "lv_port_disp_template.h"
 #include "myui.h"
+#include "stm32f4xx_hal_def.h"

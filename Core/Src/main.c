@@ -28,7 +28,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "myproject.h"
-#include "myui.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -107,6 +107,7 @@ uint8_t i,j;
 	//lv_demo_widgets();
 	myui_init();
 	HAL_TIM_Base_Start_IT(&htim2);
+	AirTack_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
