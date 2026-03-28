@@ -16,9 +16,6 @@
  */
 #define CMSIS_device_header "stm32f4xx.h"
 
-/* LVGL.LVGL9::LVGL:Demos:Widgets:9.4.0 */
-/*! \brief enable demo:widgets support */
-#define LV_USE_DEMO_WIDGETS             1
 /* LVGL.LVGL9::LVGL:Essential:9.4.0 */
 /*! \brief Enable LVGL */
 #define RTE_GRAPHICS_LVGL

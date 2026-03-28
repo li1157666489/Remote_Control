@@ -27,13 +27,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "FR24L01P.h"
-#include "task.h"
-#include "lvgl.h"
-#include "demos/lv_demos.h"
-#include "st7789v.h"
-#include "lv_port_disp_template.h"
-//#include "lv_port_disp.h"
+#include "myproject.h"
+#include "myui.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -109,7 +104,8 @@ uint8_t i,j;
 //	ST7789V_Test();
 	lv_init();          // LVGL 内核初始化
   lv_port_disp_init(); // 调用你修改后的显示接口初始化
-	lv_demo_widgets();
+	//lv_demo_widgets();
+	myui_init();
 	HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 

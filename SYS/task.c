@@ -1,12 +1,6 @@
-#include "stdio.h"
-#include "main.h"
-#include "adc.h"
-#include <stdint.h>
-#include "FR24L01P.h"
-#include "lvgl.h"
-#include "demos/lv_demos.h"
-//#include "lv_port_disp.h"
-#define TASKNUM_MAX 3U
+#include "myproject.h"
+#include "myui.h"
+#define TASKNUM_MAX 4U
 
 typedef  struct
 {
@@ -18,6 +12,7 @@ typedef  struct
 static void TaskScheduling_1ms(void);
 static void TaskScheduling_2ms(void);
 static void TaskScheduling_10ms(void);
+static void TaskScheduling_50ms(void);
 static typtask Air_tackList[TASKNUM_MAX]=
 {
 	  {
@@ -34,6 +29,11 @@ static typtask Air_tackList[TASKNUM_MAX]=
         0,
         10,
         TaskScheduling_10ms,
+    },
+		{
+        0,
+        50,
+        TaskScheduling_50ms,
     }
 };
 /**************************************************************************** 
@@ -124,4 +124,16 @@ con++;
 
 	}
 	ADCval= 	HAL_ADC_GetValue(&hadc1);
+}
+/**************************************************************************** 
+- Function :        
+- Input:            
+- Output:           
+- Return:           
+- Others :          
+******************************************************************************/ 
+static void TaskScheduling_50ms(void)
+{
+	myui_update_status(12, 1, 10);
+	myui_update_control(ADCval, 2, 3, 6);
 }

@@ -420,15 +420,15 @@
 
 /* Enable assertion failures if an operation fails or invalid data is found.
  * If LV_USE_LOG is enabled, an error message will be printed on failure. */
-#define LV_USE_ASSERT_NULL          1   /**< Check if the parameter is NULL. (Very fast, recommended) */
-#define LV_USE_ASSERT_MALLOC        1   /**< Checks is the memory is successfully allocated or no. (Very fast, recommended) */
+#define LV_USE_ASSERT_NULL          0   /**< Check if the parameter is NULL. (Very fast, recommended) */
+#define LV_USE_ASSERT_MALLOC        0   /**< Checks is the memory is successfully allocated or no. (Very fast, recommended) */
 #define LV_USE_ASSERT_STYLE         0   /**< Check if the styles are properly initialized. (Very fast, recommended) */
 #define LV_USE_ASSERT_MEM_INTEGRITY 0   /**< Check the integrity of `lv_mem` after critical operations. (Slow) */
 #define LV_USE_ASSERT_OBJ           0   /**< Check the object's type and existence (e.g. not deleted). (Slow) */
 
 /** Add a custom handler when assert happens e.g. to restart MCU. */
-#define LV_ASSERT_HANDLER_INCLUDE <stdint.h>
-#define LV_ASSERT_HANDLER while(1);     /**< Halt by default */
+#define LV_ASSERT_HANDLER_INCLUDE "stm32f4xx.h"
+#define LV_ASSERT_HANDLER __disable_irq(); while(1);     /**< Halt by default */
 
 /*-------------
  * Debug
@@ -1300,7 +1300,7 @@
 #define LV_BUILD_EXAMPLES 1
 
 /** Build the demos */
-#define LV_BUILD_DEMOS 1
+#define LV_BUILD_DEMOS 0
 
 /*===================
  * DEMO USAGE
@@ -1310,17 +1310,17 @@
 
     #if LV_USE_DEMO_BENCHMARK
         /** Use fonts where bitmaps are aligned 16 byte and has Nx16 byte stride */
-        #define LV_DEMO_BENCHMARK_ALIGNED_FONTS 1
-				#define LV_USE_DEMO_WIDGETS    1
+        #define LV_DEMO_BENCHMARK_ALIGNED_FONTS 0
+				#define LV_USE_DEMO_WIDGETS    0
     #endif
 
     /** Music player demo */
     #if LV_USE_DEMO_MUSIC
-        #define LV_DEMO_MUSIC_SQUARE    1
-        #define LV_DEMO_MUSIC_LANDSCAPE 1
-        #define LV_DEMO_MUSIC_ROUND     1
-        #define LV_DEMO_MUSIC_LARGE     1
-        #define LV_DEMO_MUSIC_AUTO_PLAY 1
+        #define LV_DEMO_MUSIC_SQUARE    0
+        #define LV_DEMO_MUSIC_LANDSCAPE 0
+        #define LV_DEMO_MUSIC_ROUND     0
+        #define LV_DEMO_MUSIC_LARGE     0
+        #define LV_DEMO_MUSIC_AUTO_PLAY 0
     #endif
 
 #endif /* LV_BUILD_DEMOS */

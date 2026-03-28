@@ -416,7 +416,5 @@ remote_control/lv_demo_widgets_analytics.o: \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_api_map_v9_1.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_api_map_v9_2.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_api_map_v9_3.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\widgets\lv_demo_widgets.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\..\src\draw\lv_draw.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\..\src\draw\lv_draw_triangle.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\lv_demo_widgets_components.h
+  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\..\src\draw\lv_draw_triangle.h

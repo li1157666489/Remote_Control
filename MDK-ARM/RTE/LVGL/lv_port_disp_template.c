@@ -108,7 +108,6 @@ void disp_disable_update(void)
  *`px_map` contains the rendered image as raw pixel map and it should be copied to `area` on the display.
  *You can use DMA or any hardware acceleration to do this operation in the background but
  *'lv_display_flush_ready()' has to be called when it's finished.*/
- uint16_t   TEXT[1];
 static void disp_flush(lv_display_t * disp_drv, const lv_area_t * area, uint8_t * px_map)
 {
     /* 参数检查 */
@@ -136,27 +135,6 @@ static void disp_flush(lv_display_t * disp_drv, const lv_area_t * area, uint8_t 
 
     lv_display_flush_ready(disp_drv);
 
-//uint16_t val = (uint16_t)px_map[1] |
-//               ((uint16_t)px_map[0] << 8);
-//    if(disp_flush_enabled) {
-//        /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/
-
-//        int32_t x;
-//        int32_t y;
-//        for(y = area->y1; y <= area->y2; y++) {
-//            for(x = area->x1; x <= area->x2; x++) {
-//                /*Put a pixel to the display. For example:*/
-//                /*put_px(x, y, *px_map)*/
-//							  LCD_DrawPoint(x, y, val);
-//                px_map++;
-//							
-//            }
-//        }
-//    }
-
-//    /*IMPORTANT!!!
-//     *Inform the graphics library that you are ready with the flushing*/
-//    lv_display_flush_ready(disp_drv);
 }
 
 #else /*Enable this file at the top*/

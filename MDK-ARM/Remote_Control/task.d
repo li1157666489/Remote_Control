@@ -1,6 +1,6 @@
 remote_control/task.o: ..\SYS\task.c RTE\LVGL\lv_conf_cmsis.h \
   RTE\_Remote_Control\RTE_Components.h \
-  RTE\_Remote_Control\Pre_Include_Global.h \
+  RTE\_Remote_Control\Pre_Include_Global.h ..\SYS\myproject.h \
   D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdio.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
@@ -448,8 +448,6 @@ remote_control/task.o: ..\SYS\task.c RTE\LVGL\lv_conf_cmsis.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_api_map_v9_2.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_api_map_v9_3.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\demos\lv_demos.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\..\lvgl.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\lv_demo_widgets.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\lv_demos.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\..\src\draw\lv_draw.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\..\src\draw\lv_draw_triangle.h
+  D:\APP\keil\LVGL\lvgl\9.4.0\demos\..\lvgl.h ..\SYS\task.h \
+  ..\Hardware\LCD\st7789v.h ..\Hardware\LCD\fonts.h \
+  RTE\LVGL\lv_port_disp_template.h ..\SYS\myui.h

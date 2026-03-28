@@ -37,8 +37,10 @@ remote_control/main.o: ..\Core\Src\main.c RTE\LVGL\lv_conf_cmsis.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Core\Inc\adc.h ..\Core\Inc\dma.h ..\Core\Inc\spi.h \
-  ..\Core\Inc\tim.h ..\Core\Inc\gpio.h ..\Hardware\FR24L01P\FR24L01P.h \
-  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdbool.h ..\SYS\task.h \
+  ..\Core\Inc\tim.h ..\Core\Inc\gpio.h ..\SYS\myproject.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ..\Hardware\FR24L01P\FR24L01P.h \
+  D:\APP\keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\lvgl.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\lv_version.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_init.h \
@@ -448,10 +450,6 @@ remote_control/main.o: ..\Core\Src\main.c RTE\LVGL\lv_conf_cmsis.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_api_map_v9_2.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\src\lv_api_map_v9_3.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\demos\lv_demos.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\..\lvgl.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\lv_demo_widgets.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\lv_demos.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\..\src\draw\lv_draw.h \
-  D:\APP\keil\LVGL\lvgl\9.4.0\demos\widgets\..\..\src\draw\lv_draw_triangle.h \
+  D:\APP\keil\LVGL\lvgl\9.4.0\demos\..\lvgl.h ..\SYS\task.h \
   ..\Hardware\LCD\st7789v.h ..\Hardware\LCD\fonts.h \
-  RTE\LVGL\lv_port_disp_template.h
+  RTE\LVGL\lv_port_disp_template.h ..\SYS\myui.h
