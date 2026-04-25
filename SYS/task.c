@@ -142,8 +142,8 @@ con++;
 		con = 0;
 
 	}
-	ADCval[0]= 	ADC_Read(0);
-	ADCval[1]= 	ADC_Read(1);
+	//ADCval[0]= 	ADC_Read(0);
+	//ADCval[1]= 	ADC_Read(1);
 }
 /**************************************************************************** 
 - Function :        
@@ -152,8 +152,10 @@ con++;
 - Return:           
 - Others :          
 ******************************************************************************/ 
+uint8_t Buft[50] ={11,22,33,44,55,66,77,88,99,};
 static void TaskScheduling_50ms(void)
 {
 	//myui_update_status(12, 1, 10);
 	myui_update_control(ADCval[0], ADCval[1], ADCval[0], ADCval[1]);
+	Vidcom_txdata();
 }
