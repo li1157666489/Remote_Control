@@ -28,19 +28,29 @@ typedef union
   uint8_t byte[sizeof(Tx_Data)];
 	
 }txdatatab;
+static uint16_t ADC_ToRC(uint16_t adc_val);
 txdatatab txtab;
 
 void Vidcom_init(void)
 {
 txtab.u16txdata.Frame_header = 0x5a;
-
 }
 void Vidcom_txdata(void)
 {
-	txtab.u16txdata.Roll = u16Adc_gatavg(RollChannel);
-  txtab.u16txdata.Pitch = u16Adc_gatavg(PitchChannel);
-	txtab.u16txdata.Throttle = u16Adc_gatavg(ThrottleChannel);
-  txtab.u16txdata.Yaw = u16Adc_gatavg(YawChannel);
+	txtab.u16txdata.Roll = ADC_ToRC(u16Adc_gatavg(RollChannel));
+  txtab.u16txdata.Pitch = ADC_ToRC(u16Adc_gatavg(PitchChannel));
+	txtab.u16txdata.Throttle = ADC_ToRC(u16Adc_gatavg(ThrottleChannel));
+  txtab.u16txdata.Yaw = ADC_ToRC(u16Adc_gatavg(YawChannel));
 	
 	NRF24L01_SendBuf(txtab.byte);
+}
+
+static uint16_t ADC_ToRC(uint16_t adc_val)
+{
+    // 安全限幅（防止ADC超出范围）
+    if(adc_val > 4095) adc_val = 4095;
+    if(adc_val < 0)    adc_val = 0;
+
+    // 核心公式：1000 + (adc_val * 1000) / 4095
+    return 1000 + (uint16_t)((uint32_t)adc_val * 1000 / 4095);
 }

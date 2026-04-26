@@ -108,6 +108,7 @@ uint8_t i,j;
 	HAL_TIM_Base_Start_IT(&htim2);
 	AirTack_Init();
 	Vidadc_init();
+	Vidcom_init();
   FR24L019P_init (FR24_TX_Mode);
   /* USER CODE END 2 */
 
