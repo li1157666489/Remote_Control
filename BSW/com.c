@@ -25,7 +25,7 @@ typedef struct
 typedef union
 {
   Tx_Data u16txdata;
-  uint8_t byte[4U];
+  uint8_t byte[sizeof(Tx_Data)];
 	
 }txdatatab;
 txdatatab txtab;
@@ -39,5 +39,8 @@ void Vidcom_txdata(void)
 {
 	txtab.u16txdata.Roll = u16Adc_gatavg(RollChannel);
   txtab.u16txdata.Pitch = u16Adc_gatavg(PitchChannel);
-	//NRF24L01_SendBuf(txtab.byte);
+	txtab.u16txdata.Throttle = u16Adc_gatavg(ThrottleChannel);
+  txtab.u16txdata.Yaw = u16Adc_gatavg(YawChannel);
+	
+	NRF24L01_SendBuf(txtab.byte);
 }
