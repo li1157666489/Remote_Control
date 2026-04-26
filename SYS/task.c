@@ -92,7 +92,7 @@ void AirTack_Scheduling(void)
 static void TaskScheduling_1ms(void)
 {
 HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_8);
-HAL_ADC_Start(&hadc1);
+//HAL_ADC_Start(&hadc1);
 }
 /**************************************************************************** 
 - Function :        

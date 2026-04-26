@@ -1,5 +1,5 @@
 #include "ADCcalculate.h"
-
+#include "myproject.h"
 #define ADC_DMA_BUF_SIZE (NumChannel*16 ) // Í¨µÀ¡Á16´Î
 uint16_t adcDmaBuf[ADC_DMA_BUF_SIZE];
 uint16_t adcChannelAvg[NumChannel];

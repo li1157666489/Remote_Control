@@ -158,52 +158,52 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ADCval,0x0A</ItemText>
+          <ItemText>dropdown</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>dropdown</ItemText>
+          <ItemText>TEXT</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>TEXT</ItemText>
+          <ItemText>TEXT[1]</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>TEXT[1]</ItemText>
+          <ItemText>TEXT[0]</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>TEXT[0]</ItemText>
+          <ItemText>cfsr</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>cfsr</ItemText>
+          <ItemText>bfar</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>bfar</ItemText>
+          <ItemText>yaw_pos</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>yaw_pos</ItemText>
+          <ItemText>throttle_pos</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>throttle_pos</ItemText>
+          <ItemText>ADCval</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ADCval</ItemText>
+          <ItemText>adcChannelAvg,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -736,11 +736,11 @@
       <GroupNumber>7</GroupNumber>
       <FileNumber>36</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\BSW\ADC.c</PathWithFileName>
-      <FilenameWithoutPath>ADC.c</FilenameWithoutPath>
+      <PathWithFileName>..\BSW\com.c</PathWithFileName>
+      <FilenameWithoutPath>com.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -751,8 +751,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\BSW\com.c</PathWithFileName>
-      <FilenameWithoutPath>com.c</FilenameWithoutPath>
+      <PathWithFileName>..\BSW\ADCcalculate.c</PathWithFileName>
+      <FilenameWithoutPath>ADCcalculate.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

@@ -99,7 +99,6 @@ uint8_t i,j;
   MX_TIM3_Init();
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
-  FR24L019P_init (FR24_TX_Mode);
 	ST7789V_Init();//LCD初始化
 //	ST7789V_Test();
 	lv_init();          // LVGL 内核初始化
@@ -108,6 +107,8 @@ uint8_t i,j;
 	myui_init();
 	HAL_TIM_Base_Start_IT(&htim2);
 	AirTack_Init();
+	Vidadc_init();
+  FR24L019P_init (FR24_TX_Mode);
   /* USER CODE END 2 */
 
   /* Infinite loop */

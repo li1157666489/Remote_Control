@@ -450,4 +450,5 @@ remote_control/task.o: ..\SYS\task.c RTE\LVGL\lv_conf_cmsis.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\demos\lv_demos.h \
   D:\APP\keil\LVGL\lvgl\9.4.0\demos\..\lvgl.h ..\SYS\task.h \
   ..\Hardware\LCD\st7789v.h ..\Hardware\LCD\fonts.h \
-  RTE\LVGL\lv_port_disp_template.h ..\SYS\myui.h
+  RTE\LVGL\lv_port_disp_template.h ..\SYS\myui.h ..\BSW\com.h \
+  ..\BSW\ADCcalculate.h
